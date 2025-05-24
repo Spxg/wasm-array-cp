@@ -6,7 +6,7 @@ use js_sys::{
 };
 use wasm_bindgen::{prelude::wasm_bindgen, JsCast};
 
-#[wasm_bindgen(module = "/src/copy.js")]
+#[wasm_bindgen(module = "/copy.min.js")]
 extern "C" {
     type JSArrayBufferCopy;
 
@@ -205,7 +205,7 @@ mod tests {
             #[allow(unused)]
             #[wasm_bindgen_test]
             fn $name() {
-                let buf1 = vec![1, 2, 3, 4];
+                let buf1 = vec![1, 2, 3, 4, $rust::MIN, $rust::MAX];
                 let array: $js = ArrayBufferCopy::from_slice(&buf1);
                 let buf2 = ArrayBufferCopy::to_vec(&array);
                 assert_eq!(buf1, buf2);
@@ -226,7 +226,7 @@ mod tests {
             #[allow(unused)]
             #[wasm_bindgen_test]
             fn $name() {
-                let buf1 = vec![1.0, 2.0, 3.0, 4.0];
+                let buf1 = vec![1.0, 2.0, 3.0, 4.0, $rust::MIN, $rust::MAX];
                 let array: $js = ArrayBufferCopy::from_slice(&buf1);
                 let buf2 = ArrayBufferCopy::to_vec(&array);
                 assert_eq!(buf1, buf2);
