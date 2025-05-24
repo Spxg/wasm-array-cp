@@ -123,7 +123,7 @@ dependencies = [
 
 [[package]]
 name = "wasm-array-cp"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "js-sys",
  "wasm-bindgen",

@@ -1,6 +1,6 @@
 [package]
 name = "wasm-array-cp"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Spxg <unsafe@outlook.es>"]
 readme = "README.md"
