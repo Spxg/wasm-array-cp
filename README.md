@@ -2,13 +2,11 @@
 
 [![Crates.io](https://img.shields.io/crates/v/wasm-array-cp.svg)](https://crates.io/crates/wasm-array-cp)
 
-Directly using js-sys `copy_from` and `copy_to` to convert `Js Array` and `Vec<T>` is fragile.
+Using `js-sys`'s `copy_from` and `copy_to` method to convert `TypedArray` and `Vec<T>|&[T]` is unreliable.  There is a possibility that the memory will grow and the array buffer will be detached during copy. 
 
-There is a possibility that the memory will grow and the array buffer will be detached during copy. 
+So here we convert on the JS side.
 
-So here we convert on the js side.
-
-# Usage
+## Usage
 
 ```rust
 use js_sys::Uint8Array;
